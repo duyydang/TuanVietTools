@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity_LoiTinhGiaThanh">
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        app:srcCompat="@drawable/logo" />
+
+    <Spinner
+        android:layout_marginTop="14dp"
+        android:layout_below="@id/imageView"
+        android:id="@+id/spinnerGiaThanh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:layout_centerHorizontal="true"
+        android:id="@+id/buttonKiemTraKho"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spinnerGiaThanh"
+        android:layout_marginTop="14dp"
+        android:text="Kiểm Tra" />
+
+    <TableLayout
+        android:layout_below="@id/buttonKiemTraKho"
+        android:id="@+id/tableLayoutId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:stretchColumns="1">
+        <TableRow
+            android:layout_marginTop="20dp"
+            android:id="@+id/firstRow"
+            android:background="@drawable/border"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="37dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginBottom="2dp"
+                android:layout_weight="1"
+                android:background="#b0b0b0"
+                android:gravity="center"
+                android:paddingStart="3dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="3dp"
+                android:paddingBottom="10dp"
+                android:text="PerNbr"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="1dp"
+                android:id="@+id/textView2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:background="#b0b0b0"
+                android:gravity="center"
+                android:paddingStart="3dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="3dp"
+                android:paddingBottom="10dp"
+                android:text="SiteID"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="1dp"
+                android:id="@+id/textView3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:background="#b0b0b0"
+                android:gravity="center"
+                android:paddingStart="3dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="3dp"
+                android:paddingBottom="10dp"
+                android:text="Date"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="1dp"
+                android:id="@+id/textView4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:background="#b0b0b0"
+                android:gravity="center"
+                android:paddingStart="3dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="3dp"
+                android:paddingBottom="10dp"
+                android:text="User"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </TableRow>
+        <TableRow
+            android:id="@+id/secondRow"
+            android:background="@drawable/border"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/textViewPernbrKho"
+                android:layout_width="37dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginBottom="2dp"
+                android:layout_weight="1"
+                android:background="#b0b0b0"
+                android:gravity="center"
+                android:paddingStart="3dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="3dp"
+                android:paddingBottom="10dp"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="1dp"
+                android:id="@+id/textViewSiteIDKho"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:background="#b0b0b0"
+                android:gravity="center"
+                android:paddingStart="3dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="3dp"
+                android:paddingBottom="10dp"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="1dp"
+                android:id="@+id/textViewDateKho"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:background="#b0b0b0"
+                android:gravity="center"
+                android:paddingStart="3dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="3dp"
+                android:paddingBottom="10dp"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="1dp"
+                android:id="@+id/textViewUserKho"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:background="#b0b0b0"
+                android:gravity="center"
+                android:paddingStart="3dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="3dp"
+                android:paddingBottom="10dp"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </TableRow>
+    </TableLayout>
+
+    <Button
+        android:layout_centerHorizontal="true"
+        android:id="@+id/buttonXuLyKho"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tableLayoutId"
+        android:layout_marginTop="5dp"
+        android:text="Xử Lý" />
+
+
+</RelativeLayout>

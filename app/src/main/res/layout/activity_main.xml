@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        app:srcCompat="@drawable/logo" />
+
+    <Button
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/imageView"
+        android:id="@+id/buttonMoTrangThaiDonHang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:text="Mở trạng thái đơn hàng" />
+
+    <Button
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/buttonMoTrangThaiDonHang"
+        android:id="@+id/buttonTinhSoLieuKho"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Lỗi tính giá thành" />
+
+    <Button
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/buttonTinhSoLieuKho"
+        android:id="@+id/buttonLoiCapNhat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Lỗi cập nhật" />
+
+    <Button
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/buttonLoiCapNhat"
+        android:id="@+id/buttonXoaChungTuKhongHopLe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Xoá chứng từ không hợp lệ" />
+
+
+
+</RelativeLayout>
