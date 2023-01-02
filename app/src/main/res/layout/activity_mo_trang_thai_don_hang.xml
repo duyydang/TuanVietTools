@@ -73,7 +73,7 @@
                     android:paddingTop="10dp"
                     android:paddingEnd="3dp"
                     android:paddingBottom="10dp"
-                    android:text="DocBal"
+                    android:text="Status"
                     android:textColor="@android:color/white"
                     android:textSize="10sp"
                     android:textStyle="bold" />
@@ -93,7 +93,7 @@
                     android:paddingTop="10dp"
                     android:paddingEnd="3dp"
                     android:paddingBottom="10dp"
-                    android:text="CurryDocBal"
+                    android:text="Order"
                     android:textColor="@android:color/white"
                     android:textSize="10sp"
                     android:textStyle="bold" />
@@ -113,7 +113,7 @@
                     android:paddingTop="10dp"
                     android:paddingEnd="3dp"
                     android:paddingBottom="10dp"
-                    android:text="CuryOrigDocAtm"
+                    android:text="ARBatNbr"
                     android:textColor="@android:color/white"
                     android:textSize="10sp"
                     android:textStyle="bold" />
@@ -133,7 +133,7 @@
                     android:paddingTop="10dp"
                     android:paddingEnd="3dp"
                     android:paddingBottom="10dp"
-                    android:text="CustID"
+                    android:text="Date"
                     android:textColor="@android:color/white"
                     android:textSize="10sp"
                     android:textStyle="bold" />
@@ -146,7 +146,7 @@
                 android:background="@drawable/border">
 
                 <TextView
-                    android:id="@+id/textViewPernbrKho"
+                    android:id="@+id/textViewStatusOrder"
                     android:layout_width="37dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="2dp"
@@ -165,7 +165,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/textViewSiteIDKho"
+                    android:id="@+id/textViewOrder"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="2dp"
@@ -184,7 +184,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/textViewDateKho"
+                    android:id="@+id/textViewARBatNbr"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="2dp"
@@ -203,7 +203,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/textViewUserKho"
+                    android:id="@+id/textViewOrderDate"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="2dp"
@@ -225,7 +225,7 @@
     </HorizontalScrollView>
 
     <Button
-        android:id="@+id/buttonXuLyKho"
+        android:id="@+id/buttonXuLyOrder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/scrollView"

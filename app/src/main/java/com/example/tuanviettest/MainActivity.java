@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         AnhXa();
-        btnMoTrangThai.setEnabled(false);
+
         btnMoTrangThai.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

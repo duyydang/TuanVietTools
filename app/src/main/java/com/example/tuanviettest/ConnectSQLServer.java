@@ -10,10 +10,12 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ConnectSQLServer {
     Statement statement;
-    String Per, Site, Date, User;
+    Result result = new Result();
     Connection conn = null;
     Context context;
 
@@ -26,7 +28,7 @@ public class ConnectSQLServer {
         // thông tin của sql server
         String ip = "125.212.238.246";
         String port = "9898";
-        String db = "TVApp_"+branch;
+        String db = "TVApp_" + branch;
         String un = "dangld";
         String password = "Dang@123";
         // build
@@ -45,7 +47,7 @@ public class ConnectSQLServer {
     }
 
     // kiểm tra tính giá thành từ sql server
-    public void GetCheckKho(String branch) {
+    public void CheckKho(String branch) {
         String ConnectionResult = "";
         connectionclass(branch);
         try {
@@ -53,10 +55,10 @@ public class ConnectSQLServer {
             statement = conn.createStatement();
             ResultSet rs = statement.executeQuery(query);
             while (rs.next()) {
-                Per = rs.getString(1);
-                Site = rs.getString(2);
-                Date = rs.getString(3);
-                User = rs.getString(4);
+                result.setPer(rs.getString(1));
+                result.setSite(rs.getString(2));
+                result.setDate(rs.getString(3));
+                result.setUser(rs.getString(4));
                 break;
             }
             rs.close();
@@ -71,6 +73,7 @@ public class ConnectSQLServer {
             }
         }
     }
+
     // xoá tiến trình đang tính giá thành
     public void XuLyLoiKho(String branch) {
         String ConnectionResult = "";
@@ -81,6 +84,34 @@ public class ConnectSQLServer {
             ResultSet rs = statement.executeQuery(query);
             rs.close();
 
+        } catch (Exception ex) {
+            Log.e("Error: ", ex.getMessage());
+        } finally {
+            try {
+                Toast.makeText(context, "Xử lý thành công", Toast.LENGTH_SHORT).show();
+                statement.close();
+                conn.close();
+            } catch (Exception e) {
+            }
+        }
+    }
+
+    // check order
+    public void CheckOrder(String branch,String order) {
+        String ConnectionResult = "";
+        connectionclass(branch);
+        try {
+            String query = "select Status,OrderNbr,ARBatNbr,OrderDate from OM_SalesOrd where OrderNbr in ('"+order+"')";
+            statement = conn.createStatement();
+            ResultSet rs = statement.executeQuery(query);
+            while (rs.next()) {
+                result.setStatus(rs.getString(1));
+                result.setOrder(rs.getString(2));
+                result.setArbatnbr(rs.getString(3));
+                result.setDate(rs.getString(4));
+                Log.d("order",result.getOrder()+" - "+result.getStatus());
+            }
+            rs.close();
         } catch (Exception ex) {
             Log.e("Error: ", ex.getMessage());
         } finally {

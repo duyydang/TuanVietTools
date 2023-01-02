@@ -21,6 +21,7 @@ public class activity_LoiTinhGiaThanh extends AppCompatActivity {
     Spinner spinner;
     SpinnerChiNhanh spinnerChiNhanh;
 
+    Result result;
     Button btnKiemTra, btnXuLy;
     TextView txtPer, txtSite, txtDate, txtUser;
     ConnectSQLServer connectSQLServer = new ConnectSQLServer(this);
@@ -31,6 +32,7 @@ public class activity_LoiTinhGiaThanh extends AppCompatActivity {
         setContentView(R.layout.activity_loi_tinh_gia_thanh);
 
         AnhXa();
+        result = new Result();
         // lấy adapter từ class
         spinnerChiNhanh = new SpinnerChiNhanh(this);
         spinner.setAdapter(spinnerChiNhanh.spinnerAdapter);
@@ -44,12 +46,12 @@ public class activity_LoiTinhGiaThanh extends AppCompatActivity {
                     public void onClick(View view) {
                         // call function từ class connectSQLServer
                         // lấy branch từ spinnerChiNhanh để truyền vào xác định db
-                        connectSQLServer.GetCheckKho(spinnerChiNhanh.list.get(i));
+                        connectSQLServer.CheckKho(spinnerChiNhanh.list.get(i));
                         // set dữ liệu
-                        txtPer.setText(connectSQLServer.Per);
-                        txtSite.setText(connectSQLServer.Site);
-                        txtDate.setText(connectSQLServer.Date);
-                        txtUser.setText(connectSQLServer.User);
+                        txtPer.setText(result.getPer());
+                        txtSite.setText(result.getSite());
+                        txtDate.setText(result.getDate());
+                        txtUser.setText(result.getUser());
                     }
                 });
                 //bắt sự kiện xử lý tính giá thành
