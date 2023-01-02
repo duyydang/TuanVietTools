@@ -3,7 +3,9 @@ package com.example.tuanviettest;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
@@ -21,7 +23,7 @@ public class activity_LoiTinhGiaThanh extends AppCompatActivity {
 
     Button btnKiemTra, btnXuLy;
     TextView txtPer, txtSite, txtDate, txtUser;
-    ConnectSQLServer connectSQLServer = new ConnectSQLServer();
+    ConnectSQLServer connectSQLServer = new ConnectSQLServer(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,26 +31,37 @@ public class activity_LoiTinhGiaThanh extends AppCompatActivity {
         setContentView(R.layout.activity_loi_tinh_gia_thanh);
 
         AnhXa();
+        // lấy adapter từ class
         spinnerChiNhanh = new SpinnerChiNhanh(this);
         spinner.setAdapter(spinnerChiNhanh.spinnerAdapter);
-
-        btnKiemTra.setOnClickListener(new View.OnClickListener() {
+        // tạo sự kiện khi chọn item
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onClick(View view) {
-                connectSQLServer.connectionclass();
-                connectSQLServer.GetCheckKho();
-                txtPer.setText(connectSQLServer.Per);
-                txtSite.setText(connectSQLServer.Site);
-                txtDate.setText(connectSQLServer.Date);
-                txtUser.setText(connectSQLServer.User);
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                // Sự kiện khi click Kiểm tra
+                btnKiemTra.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        // call function từ class connectSQLServer
+                        // lấy branch từ spinnerChiNhanh để truyền vào xác định db
+                        connectSQLServer.GetCheckKho(spinnerChiNhanh.list.get(i));
+                        // set dữ liệu
+                        txtPer.setText(connectSQLServer.Per);
+                        txtSite.setText(connectSQLServer.Site);
+                        txtDate.setText(connectSQLServer.Date);
+                        txtUser.setText(connectSQLServer.User);
+                    }
+                });
+                //bắt sự kiện xử lý tính giá thành
+                btnXuLy.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        connectSQLServer.XuLyLoiKho(spinnerChiNhanh.list.get(i));
+                    }
+                });
             }
-        });
-        btnXuLy.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                connectSQLServer.connectionclass();
-                connectSQLServer.XuLyLoiKho();
-                    Toast.makeText(activity_LoiTinhGiaThanh.this, "Xử lý thành công", Toast.LENGTH_SHORT).show();
+            public void onNothingSelected(AdapterView<?> adapterView) {
             }
         });
     }
@@ -61,6 +74,6 @@ public class activity_LoiTinhGiaThanh extends AppCompatActivity {
         txtDate = (TextView) findViewById(R.id.textViewDateKho);
         txtUser = (TextView) findViewById(R.id.textViewUserKho);
         // add dữ liệu vào list
-        spinner = (Spinner)findViewById(R.id.spinnerGiaThanh);
+        spinner = (Spinner) findViewById(R.id.spinnerGiaThanh);
     }
 }

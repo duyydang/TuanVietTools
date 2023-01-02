@@ -17,19 +17,20 @@ public class SpinnerChiNhanh{
         this.context = context;
 
         list = new ArrayList<>();
-        list.add("Khánh Hoà");
-        list.add("Phú Yên");
-        list.add("Bình Định");
-        list.add("Quảng Ngãi");
-        list.add("Quảng Nam");
-        list.add("Đà Nẵng");
-        list.add("Huế");
-        list.add("Quảng Trị");
-        list.add("Quảng Bình");
-        list.add("Hà Tĩnh");
-        list.add("Vinh");
-        list.add("Quỳnh Lưu");
-        list.add("Thanh Hóa");
+        list.add("Test");
+        list.add("BDINH");
+        list.add("DNANG");
+        list.add("HTINH");
+        list.add("HUE");
+        list.add("KHHOA");
+        list.add("NGAN1");
+        list.add("NGAN2");
+        list.add("PHYEN");
+        list.add("QBINH");
+        list.add("QNAM");
+        list.add("QNGAI");
+        list.add("QTRI");
+        list.add("THOA1");
 
         spinnerAdapter = new ArrayAdapter(context,R.layout.adapter_sniper,list);
     }

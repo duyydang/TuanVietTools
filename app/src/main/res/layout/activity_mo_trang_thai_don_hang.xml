@@ -13,4 +13,224 @@
         android:layout_height="120dp"
         app:srcCompat="@drawable/logo" />
 
+    <Spinner
+        android:id="@+id/spinnerDonHang"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageView"
+        android:layout_marginTop="14dp" />
+
+    <EditText
+        android:id="@+id/editTextCheckOrder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spinnerDonHang"
+        android:hint="Nhập đơn hàng" />
+
+    <Button
+        android:id="@+id/buttonCheckOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextCheckOrder"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
+        android:text="Kiểm Tra" />
+
+    <HorizontalScrollView
+        android:layout_below="@+id/buttonCheckOrder"
+        android:id="@+id/scrollView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="horizontal">
+
+        <TableLayout
+            android:id="@+id/tableLayoutId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/buttonCheckOrder"
+            android:layout_margin="5dp"
+            android:stretchColumns="1">
+
+            <TableRow
+                android:id="@+id/firstRow"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/border">
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="37dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="1dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_weight="2"
+                    android:background="#b0b0b0"
+                    android:gravity="center"
+                    android:paddingStart="3dp"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="3dp"
+                    android:paddingBottom="10dp"
+                    android:text="DocBal"
+                    android:textColor="@android:color/white"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="1dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_weight="2"
+                    android:background="#b0b0b0"
+                    android:gravity="center"
+                    android:paddingStart="3dp"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="3dp"
+                    android:paddingBottom="10dp"
+                    android:text="CurryDocBal"
+                    android:textColor="@android:color/white"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="0dp"
+                    android:layout_height="37dp"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="1dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_weight="2"
+                    android:background="#b0b0b0"
+                    android:gravity="center"
+                    android:paddingStart="3dp"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="3dp"
+                    android:paddingBottom="10dp"
+                    android:text="CuryOrigDocAtm"
+                    android:textColor="@android:color/white"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="1dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_weight="2"
+                    android:background="#b0b0b0"
+                    android:gravity="center"
+                    android:paddingStart="3dp"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="3dp"
+                    android:paddingBottom="10dp"
+                    android:text="CustID"
+                    android:textColor="@android:color/white"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/secondRow"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border">
+
+                <TextView
+                    android:id="@+id/textViewPernbrKho"
+                    android:layout_width="37dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="1dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_weight="2"
+                    android:background="#b0b0b0"
+                    android:gravity="center"
+                    android:paddingStart="3dp"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="3dp"
+                    android:paddingBottom="10dp"
+                    android:textColor="@android:color/white"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewSiteIDKho"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="1dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_weight="2"
+                    android:background="#b0b0b0"
+                    android:gravity="center"
+                    android:paddingStart="3dp"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="3dp"
+                    android:paddingBottom="10dp"
+                    android:textColor="@android:color/white"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewDateKho"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="1dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_weight="2"
+                    android:background="#b0b0b0"
+                    android:gravity="center"
+                    android:paddingStart="3dp"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="3dp"
+                    android:paddingBottom="10dp"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewUserKho"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="1dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_weight="2"
+                    android:background="#b0b0b0"
+                    android:gravity="center"
+                    android:paddingStart="3dp"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="3dp"
+                    android:paddingBottom="10dp"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </TableRow>
+        </TableLayout>
+    </HorizontalScrollView>
+
+    <Button
+        android:id="@+id/buttonXuLyKho"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/scrollView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:text="Xử Lý" />
+
 </RelativeLayout>
